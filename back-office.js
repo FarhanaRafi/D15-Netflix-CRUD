@@ -7,6 +7,7 @@ let header = new Headers({
 let globalMovies = [];
 let selectedMovie;
 
+//to load section in back office
 const loadSections = async (categories) => {
   let section = document.getElementById("categories");
   categories.forEach(async (item) => {
@@ -41,6 +42,7 @@ const loadSections = async (categories) => {
   });
 };
 
+//load section
 const loadPage = async () => {
   globalMovies = [];
   selectedMovie = null;
@@ -61,6 +63,7 @@ const loadPage = async () => {
   }
 };
 
+//to open modal when clicked on edit btn
 const openEdit = async (id) => {
   let { name, category, imageUrl, description } = globalMovies.find(
     (item) => item._id === id
@@ -74,6 +77,7 @@ const openEdit = async (id) => {
   $("#exampleModal").modal("show");
 };
 
+//to post the movies
 let handleNewEvent = async (submitEvent) => {
   try {
     submitEvent.preventDefault();
@@ -103,6 +107,7 @@ let handleNewEvent = async (submitEvent) => {
   }
 };
 
+//to update the movies
 let handleEditEvent = async (submitEvent) => {
   try {
     submitEvent.preventDefault();
@@ -134,6 +139,7 @@ let handleEditEvent = async (submitEvent) => {
   }
 };
 
+//to delete the movies
 const deleteEvent = async (id) => {
   let res = await fetch(url + id, { method: "DELETE", headers: header });
   let resJson = await res.json();
