@@ -17,12 +17,14 @@ function deferVideo() {
 }
 const renderSections = async (sections) => {
   let container = document.querySelector(".container-fluid");
+  let dropDown = document.getElementById("drop-down-menu");
   sections.forEach(async (section) => {
     container.innerHTML += `<h4 class = "text-white mb-4 mt-4">${section}</h4>
     <div id="${section}" class="row row-cols-2 row-cols-sm-2 row-cols-md-5 row-cols-lg-5"></div>`;
     let res = await fetch(url + section, options);
     let movies = await res.json();
     let row = document.getElementById(section);
+    dropDown.innerHTML += `<a class="dropdown-item" href="#${section}">${section}</a>`;
     movies.forEach((movie) => {
       row.innerHTML += `<div class="px-1 mb-3">
         <div class="movie-card">

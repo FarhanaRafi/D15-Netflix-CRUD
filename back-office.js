@@ -6,7 +6,42 @@ let header = new Headers({
 });
 let globalMovies = [];
 let selectedMovie;
-let loadPage = async () => {
+
+const loadSections = async (categories) => {
+  let section = document.getElementById("categories");
+  categories.forEach(async (item) => {
+    section.innerHTML += `<h2 class="text-danger mb-3">${item.toUpperCase()}</h2>
+    <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col"></th>
+      <th scope="col">Description</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody id=${item}>
+   
+    </tbody>
+    </table>`;
+    let res = await fetch(url + item, { method: "GET", headers: header });
+    let movies = await res.json();
+    let tableContent = document.getElementById(item);
+    movies.forEach((movie) => {
+      globalMovies.push(movie);
+      tableContent.innerHTML += ` <tr>
+      <th scope="row">${movie.name}</th>
+      <th scope="row"><img height="40" width ="40" src="${movie.imageUrl}" alt=""></th>
+      <td>${movie.description}</td>
+      <td> <button type="button" class="btn btn-danger" onclick = "deleteEvent('${movie._id}')">Delete</button></td>
+      <td> <button type="button" class="btn btn-secondary" onclick = "openEdit('${movie._id}')">Edit</button></td>
+    </tr>`;
+    });
+  });
+};
+
+const loadPage = async () => {
   globalMovies = [];
   selectedMovie = null;
   document.querySelector("#eventName").value = "";
@@ -24,38 +59,6 @@ let loadPage = async () => {
   } catch (err) {
     console.log(err);
   }
-};
-
-const loadSections = async (categories) => {
-  let section = document.getElementById("categories");
-  categories.forEach(async (item) => {
-    section.innerHTML += `<h2>${item.toUpperCase()}</h2>
-    <table class="table">
-    <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-    </thead>
-    <tbody id=${item}>
-   
-    </tbody>
-    </table>`;
-    let res = await fetch(url + item, { method: "GET", headers: header });
-    let movies = await res.json();
-    let tableContent = document.getElementById(item);
-    movies.forEach((movie) => {
-      globalMovies.push(movie);
-      tableContent.innerHTML += ` <tr>
-      <th scope="row">${movie.name}</th>
-      <td>${movie.description}</td>
-      <td> <button type="button" class="btn btn-danger" onclick = "deleteEvent('${movie._id}')">Delete</button></td>
-      <td> <button type="button" class="btn btn-danger" onclick = "openEdit('${movie._id}')">Edit</button></td>
-    </tr>`;
-    });
-  });
 };
 
 const openEdit = async (id) => {
@@ -93,8 +96,10 @@ let handleNewEvent = async (submitEvent) => {
     let res = await fetch(url, options);
     let resJson = await res.json();
     loadPage();
+    document.getElementById("success-alert").classList.add("d-block");
   } catch (err) {
     console.log(err);
+    document.getElementById("danger-alert").classList.add("d-block");
   }
 };
 
@@ -122,8 +127,10 @@ let handleEditEvent = async (submitEvent) => {
     let resJson = await res.json();
 
     loadPage();
+    document.getElementById("success-alert").classList.add("d-block");
   } catch (err) {
     console.log(err);
+    // document.getElementById("danger-alert").classList.add("d-block");
   }
 };
 

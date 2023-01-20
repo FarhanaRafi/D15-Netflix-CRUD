@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: rgb(20, 20, 20);
 }
@@ -14,7 +18,6 @@ body {
         height: 60vh;
     }
 }
-
 
 @media (max-width: 1000px) {
     .jumbotron {
@@ -107,7 +110,6 @@ body {
     transform: scale(1.2);
 }
 
-
 .wrapper section a {
     position: absolute;
     color: #fff;
@@ -133,8 +135,6 @@ body {
     right: 0;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
-
-
 
 .cards-wrapper {
     display: flex;
@@ -299,7 +299,6 @@ body {
     transform: scale(1.2);
     z-index: 2;
 }
-
 
 .info-container h6 {
     margin-top: -8px;

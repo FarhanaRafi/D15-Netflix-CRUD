@@ -15,6 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="./index.html"><img height="50" src="./assets/netflix_logo.png" alt="">
+            <div class="mt-n3 ml-3"><small>BackOffice</small></div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,14 +29,13 @@
                 <a class="nav-link disabled">Disabled</a>
             </div>
         </div>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
             Add Movie
-          </button>
+        </button>
     </nav>
-    
     <div class="container mt-5">
         <div class="alert alert-success d-none" role="alert" id="success-alert">
-            <span>Item added to catalog</span>
+            <span>Film added to catalog</span>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -48,53 +48,49 @@
         </div>
 
         <div class="container" id="categories">
-       
-        </div>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Movie</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
-        <div class="modal-body">
-            <form>
-                <div class="form-group">
-                    <label for="eventName">Name</label>
-                    <input type="email" class="form-control" required id="eventName" placeholder="Enter Name">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Movie</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="eventName">Name</label>
+                                <input type="email" class="form-control" required id="eventName"
+                                    placeholder="Enter Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventCategory">Category</label>
+                                <input type="email" class="form-control" required id="eventCategory"
+                                    placeholder="Enter Brand Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventImage">Image-Url</label>
+                                <input type="email" class="form-control" required id="eventImage" placeholder="Url">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventDescription">Description</label>
+                                <textarea class="form-control" required id="eventDescription" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="handleNewEvent(event)"
+                            data-dismiss="modal">Save</button>
+                        <button type="button" class="btn btn-success" onclick="handleEditEvent(event)"
+                            data-dismiss="modal">Update</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="eventCategory">Category</label>
-                    <input type="email" class="form-control" required id="eventCategory" placeholder="Enter Brand Name">
-                </div>
-                <div class="form-group">
-                    <label for="eventImage">Image-Url</label>
-                    <input type="email" class="form-control" required id="eventImage" placeholder="Url">
-                </div>
-    
-                <div class="form-group">
-                    <label for="eventDescription">Description</label>
-                    <textarea class="form-control" required id="eventDescription" rows="3"></textarea>
-                </div>
-            </form>
-         
+            </div>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="handleNewEvent(event)" data-dismiss="modal">Save</button>
-            <button type="button" class="btn btn-success" onclick="handleEditEvent(event)" data-dismiss="modal">Update</button>
-        </div>
-      </div>
     </div>
-  </div>
-
-       
-       
-    </div>
-
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
