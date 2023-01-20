@@ -9,6 +9,10 @@ let selectedMovie;
 let loadPage = async () => {
   globalMovies = [];
   selectedMovie = null;
+  document.querySelector("#eventName").value = "";
+  document.querySelector("#eventCategory").value = "";
+  document.querySelector("#eventImage").value = "";
+  document.querySelector("#eventDescription").value = "";
   document.getElementById("categories").innerHTML = "";
   try {
     let res = await fetch(url, {
@@ -118,10 +122,6 @@ let handleEditEvent = async (submitEvent) => {
     let resJson = await res.json();
 
     loadPage();
-    document.querySelector("#eventName").value = "";
-    document.querySelector("#eventCategory").value = "";
-    document.querySelector("#eventImage").value = "";
-    document.querySelector("#eventDescription").value = "";
   } catch (err) {
     console.log(err);
   }
