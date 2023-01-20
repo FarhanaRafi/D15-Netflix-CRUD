@@ -307,6 +307,16 @@ body {
     color: #f8f9fa;
 }
 
+.info-container h5 {
+    font-size: 19px;
+    color: #50e909;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+}
+
 .info-container p {
     font-size: 13px;
     color: #f8f9fa;

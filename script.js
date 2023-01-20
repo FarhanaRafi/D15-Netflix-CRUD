@@ -18,7 +18,7 @@ function deferVideo() {
 const renderSections = async (sections) => {
   let container = document.querySelector(".container-fluid");
   sections.forEach(async (section) => {
-    container.innerHTML += `<h4 class = "text-white">${section}</h4>
+    container.innerHTML += `<h4 class = "text-white mb-4 mt-4">${section}</h4>
     <div id="${section}" class="row row-cols-2 row-cols-sm-2 row-cols-md-5 row-cols-lg-5"></div>`;
     let res = await fetch(url + section, options);
     let movies = await res.json();
@@ -33,7 +33,8 @@ const renderSections = async (sections) => {
                     <i class="bi bi-plus-circle mr-2"></i>
                 </div>
                 <h6 class="text-success mb-2">95% Match</h6>
-                <p>${movie.name}</p>
+                <h5>${movie.name}</h5>
+                <p>${movie.description}</p>
             </div>
         </div>
     </div>`;
