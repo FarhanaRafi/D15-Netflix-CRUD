@@ -10,8 +10,8 @@ let selectedMovie;
 //to load section in back office
 const loadSections = async (categories) => {
   let section = document.getElementById("categories");
-  categories.forEach(async (item) => {
-    section.innerHTML += `<h2 class="text-danger mb-3">${item.toUpperCase()}</h2>
+  categories.forEach(async (category) => {
+    section.innerHTML += `<h2 class="text-danger mb-3">${category.toUpperCase()}</h2>
     <table class="table">
     <thead>
     <tr>
@@ -22,13 +22,13 @@ const loadSections = async (categories) => {
       <th scope="col"></th>
     </tr>
     </thead>
-    <tbody id=${item}>
+    <tbody id=${category}>
    
     </tbody>
     </table>`;
-    let res = await fetch(url + item, { method: "GET", headers: header });
+    let res = await fetch(url + category, { method: "GET", headers: header });
     let movies = await res.json();
-    let tableContent = document.getElementById(item);
+    let tableContent = document.getElementById(category);
     movies.forEach((movie) => {
       globalMovies.push(movie);
       tableContent.innerHTML += ` <tr>
