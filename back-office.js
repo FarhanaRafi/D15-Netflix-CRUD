@@ -2,7 +2,7 @@ let url = "https://striveschool-api.herokuapp.com/api/movies/";
 let header = new Headers({
   "Content-type": "application/json",
   Authorization:
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5MzQ1ZmU3MzczODAwMTUzNzQzNzgiLCJpYXQiOjE2NzQyMDQ0MDgsImV4cCI6MTY3NTQxNDAwOH0.tn_K3ogSftVUdAF0MVdx3s9X3jtmK-1_SLrtxoOJ39o",
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5MzQ1ZmU3MzczODAwMTUzNzQzNzgiLCJpYXQiOjE2NzU0MTgwODIsImV4cCI6MTY3NjYyNzY4Mn0.gvYKFS4opPiL7u02X11EUOV4QvX7GSTkSEbvOttIi5I",
 });
 let globalMovies = [];
 let selectedMovie;
@@ -93,7 +93,7 @@ let handleNewEvent = async (submitEvent) => {
       headers: new Headers({
         "Content-type": "application/json",
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5MzQ1ZmU3MzczODAwMTUzNzQzNzgiLCJpYXQiOjE2NzQyMDQ0MDgsImV4cCI6MTY3NTQxNDAwOH0.tn_K3ogSftVUdAF0MVdx3s9X3jtmK-1_SLrtxoOJ39o",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5MzQ1ZmU3MzczODAwMTUzNzQzNzgiLCJpYXQiOjE2NzU0MTgwODIsImV4cCI6MTY3NjYyNzY4Mn0.gvYKFS4opPiL7u02X11EUOV4QvX7GSTkSEbvOttIi5I",
       }),
     };
 
@@ -124,7 +124,7 @@ let handleEditEvent = async (submitEvent) => {
       headers: new Headers({
         "Content-type": "application/json",
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5MzQ1ZmU3MzczODAwMTUzNzQzNzgiLCJpYXQiOjE2NzQyMDQ0MDgsImV4cCI6MTY3NTQxNDAwOH0.tn_K3ogSftVUdAF0MVdx3s9X3jtmK-1_SLrtxoOJ39o",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5MzQ1ZmU3MzczODAwMTUzNzQzNzgiLCJpYXQiOjE2NzU0MTgwODIsImV4cCI6MTY3NjYyNzY4Mn0.gvYKFS4opPiL7u02X11EUOV4QvX7GSTkSEbvOttIi5I",
       }),
     };
 
